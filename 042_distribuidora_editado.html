@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="042 Distribuidora — bebidas, energéticos e conveniência com delivery.">
+<title>042 Distribuidora | Conveniência & Delivery</title>
+<style>
+:root{--black:#090909;--black2:#121212;--gold:#d8ad32;--gold2:#f1cf63;--white:#f7f7f7;--muted:#b8b8b8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.5}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.94);backdrop-filter:blur(10px);border-bottom:1px solid #272727}
+.nav{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}
+.brand img{width:55px;height:55px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.brand span{font-size:18px}.brand small{display:block;color:var(--gold);font-size:11px;letter-spacing:1.5px}
+nav{display:flex;gap:22px;color:#ddd;font-size:14px}
+nav a:hover{color:var(--gold2)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;font-weight:800;padding:13px 20px;border-radius:10px;box-shadow:0 8px 25px rgba(216,173,50,.18)}
+.btn:hover{transform:translateY(-1px)}
+.hero{min-height:620px;display:grid;place-items:center;text-align:center;padding:70px 20px;position:relative;overflow:hidden;background:
+radial-gradient(circle at 50% 30%,rgba(216,173,50,.18),transparent 34%),
+linear-gradient(180deg,#0b0b0b,#090909)}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:45px 45px;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:850px}
+.kicker{color:var(--gold2);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(42px,8vw,78px);line-height:.98;margin:15px 0 20px}
+h1 span{color:var(--gold2)}
+.hero p{max-width:650px;margin:0 auto 30px;color:#d0d0d0;font-size:18px}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn.secondary{background:transparent;color:var(--white);border:1px solid #444;box-shadow:none}
+section{padding:75px 20px}
+.container{max-width:1150px;margin:auto}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:34px;margin-bottom:8px}
+.section-title p{color:var(--muted)}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.cat{background:linear-gradient(145deg,#171717,#0f0f0f);border:1px solid #292929;border-radius:16px;padding:25px;text-align:center;transition:.2s}
+.cat:hover{border-color:#8d7121;transform:translateY(-3px)}
+.cat .icon{font-size:36px;margin-bottom:10px}.cat h3{font-size:17px}.cat p{font-size:13px;color:#aaa;margin-top:5px}
+.products{background:#0d0d0d}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#151515;border:1px solid #292929;border-radius:17px;overflow:hidden}
+.product-art{height:190px;display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,#2b2b2b,#111)}
+.bottle{font-size:74px;filter:drop-shadow(0 12px 12px #000)}
+.product-body{padding:18px}.product-body small{color:var(--gold2);font-weight:700}.product-body h3{margin:4px 0 7px;font-size:18px}.product-body p{color:#aaa;font-size:13px;min-height:40px}
+.order{display:block;text-align:center;margin-top:14px;padding:10px;border-radius:9px;border:1px solid #735d1d;color:var(--gold2);font-weight:700}
+.order:hover{background:#211c0d}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-box{background:#111;border:1px solid #292929;border-radius:20px;padding:32px}
+.about-box h2{font-size:34px;margin-bottom:12px}.about-box p{color:#bbb}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.feature{padding:17px;border:1px solid #2a2a2a;border-radius:12px;background:#151515}.feature b{display:block;margin-bottom:4px}.feature span{color:#aaa;font-size:13px}
+.contact{background:linear-gradient(135deg,#17130a,#0d0d0d);text-align:center}
+.contact h2{font-size:38px;margin-bottom:10px}.contact p{color:#bbb;margin-bottom:24px}
+.notice{text-align:center;padding:16px 20px;background:#0a0a0a;border-top:1px solid #242424;color:#9f9f9f;font-size:12px}
+footer{border-top:1px solid #242424;padding:30px 20px;color:#888;text-align:center;font-size:13px}
+@media(max-width:850px){nav{display:none}.categories,.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}}
+@media(max-width:520px){.categories,.grid{grid-template-columns:1fr 1fr;gap:10px}.cat{padding:18px 10px}.product-art{height:155px}.bottle{font-size:60px}.hero{min-height:570px}section{padding:58px 15px}.brand img{width:48px;height:48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#">
+      <img src="logo.jpg" alt="Logo 042 Distribuidora">
+      <div><span>042 DISTRIBUIDORA</span><small>CONVENIÊNCIA • DELIVERY</small></div>
+    </a>
+    <nav>
+      <a href="#categorias">Categorias</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" onclick="finalizarPedido()">🛒 Carrinho (<span id="qtdCarrinho">0</span>)</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="kicker">Conveniencia • Delivery • 042</div>
+    <h1>Sua bebida favorita,<br><span>do nosso estoque</span> até você.</h1>
+    <p>Conheça a 042 Distribuidora. Bebidas, cervejas, energéticos e itens de conveniência para o seu rolê.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#produtos">Ver produtos</a>
+      <a class="btn secondary" href="#contato">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="categorias">
+  <div class="container">
+    <div class="section-title"><h2>Categorias</h2><p>Encontre o que combina com o seu momento.</p></div>
+    <div class="categories">
+      <div class="cat"><div class="icon">🥃</div><h3>Whiskies</h3><p>Rótulos conhecidos e opções variadas.</p></div>
+      <div class="cat"><div class="icon">🍺</div><h3>Cervejas</h3><p>Long neck, lata e outras opções.</p></div>
+      <div class="cat"><div class="icon">⚡</div><h3>Energéticos</h3><p>Monster, Red Bull e mais.</p></div>
+      <div class="cat"><div class="icon">🥤</div><h3>Conveniência</h3><p>Refrigerantes, água, gelo e outros.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="produtos">
+  <div class="container">
+    <div class="section-title"><h2>Produtos em destaque</h2><p>Alguns dos produtos que podem fazer parte do catálogo da 042.</p></div>
+    <div class="grid">
+      <article class="card"><div class="product-art"><div class="bottle">🥃</div></div><div class="product-body"><small>WHISKY</small><h3>Jack Daniel's</h3><p>Whisky clássico para sua seleção.</p><a class="order" href="#" onclick="adicionarCarrinho('Jack Daniel's')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">🍺</div></div><div class="product-body"><small>CERVEJA</small><h3>Heineken</h3><p>Opção para gelar e aproveitar.</p><a class="order" href="#" onclick="adicionarCarrinho('Heineken')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">🍺</div></div><div class="product-body"><small>CERVEJA</small><h3>Skol</h3><p>Uma das opções tradicionais do catálogo.</p><a class="order" href="#" onclick="adicionarCarrinho('Skol')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">🍺</div></div><div class="product-body"><small>CERVEJA</small><h3>Brahma</h3><p>Clássico para diferentes ocasiões.</p><a class="order" href="#" onclick="adicionarCarrinho('Brahma')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">⚡</div></div><div class="product-body"><small>ENERGÉTICO</small><h3>Monster</h3><p>Energia para acompanhar o seu dia.</p><a class="order" href="#" onclick="adicionarCarrinho('Monster')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">⚡</div></div><div class="product-body"><small>ENERGÉTICO</small><h3>Red Bull</h3><p>Uma opção conhecida de energético.</p><a class="order" href="#" onclick="adicionarCarrinho('Red Bull')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">🍺</div></div><div class="product-body"><small>CERVEJA</small><h3>Amstel</h3><p>Mais uma opção para o seu pedido.</p><a class="order" href="#" onclick="adicionarCarrinho('Amstel')">Adicionar ao Carrinho</a></div></article>
+      <article class="card"><div class="product-art"><div class="bottle">🥤</div></div><div class="product-body"><small>CONVENIÊNCIA</small><h3>Outros produtos</h3><p>Água, gelo, refrigerantes e muito mais.</p><a class="order" href="#" onclick="adicionarCarrinho('Outros produtos')">Adicionar ao Carrinho</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="container about">
+    <div class="about-box">
+      <h2>042 Distribuidora</h2>
+      <p>Uma experiência simples para você encontrar suas bebidas e itens de conveniência e fazer seu pedido com praticidade.</p>
+      <div class="features">
+        <div class="feature"><b>🚚 Delivery</b><span>Consulte a área e condições de entrega.</span></div>
+        <div class="feature"><b>📦 Variedade</b><span>Diferentes categorias em um só lugar.</span></div>
+        <div class="feature"><b>💬 Atendimento</b><span>Pedido e dúvidas pelo WhatsApp.</span></div>
+        <div class="feature"><b>⭐ Qualidade</b><span>Produtos de marcas conhecidas.</span></div>
+      </div>
+    </div>
+    <div class="about-box">
+      <h2>Seu pedido começa aqui.</h2>
+      <p>Escolha os produtos, chame a 042 e confirme disponibilidade, preços, formas de pagamento e entrega.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="container">
+    <h2>Faça seu pedido</h2>
+    <p>Quer receber o catálogo e consultar disponibilidade? Fale com a 042 Distribuidora.</p>
+    <!-- TROQUE o número abaixo pelo WhatsApp da distribuidora, no formato 55 + DDD + número. -->
+    <a class="btn" href="https://wa.me/5542998413122?text=Olá!%20Vim%20pelo%20site%20da%20042%20Distribuidora%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Abrir WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<div class="notice">🔞 Venda de bebidas alcoólicas proibida para menores de 18 anos. Beba com responsabilidade.</div>
+<footer>© 2026 042 Distribuidora — Conveniência & Delivery</footer>
+
+<script>
+let carrinho = [];
+
+function adicionarCarrinho(produto){
+    carrinho.push(produto);
+    atualizarCarrinho();
+    alert(produto + " adicionado ao carrinho!");
+}
+
+function atualizarCarrinho(){
+    document.getElementById("qtdCarrinho").innerText = carrinho.length;
+}
+
+function finalizarPedido(){
+    if(carrinho.length === 0){
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    let mensagem = "Olá! Gostaria de fazer o seguinte pedido:%0A%0A";
+    carrinho.forEach((item,index)=>{
+        mensagem += (index+1)+". "+item+"%0A";
+    });
+
+    window.open("https://wa.me/5542998413122?text="+mensagem,"_blank");
+}
+</script>
+</body>
+</html>
